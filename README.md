@@ -85,5 +85,11 @@ This is the place for you to write reflections:
 > Menurut saya lebih baik pakai DashMap dalam memanage list of subscribers dalam thread-safe di Rust. Hal ini karena kalau pakai Singleton pattern, bakal memanage tiap instance dalam list sehingga tidak cocok dengan Rust yang punya aturan ownership dan borrowing sehingga perlu tambahan sistem sinkronisasi seperti Mutex atau RwLock. DashMap mampu menghandle concurrency dengan baik jadi kita tidak perlu repot-repot menambah sinkronisasi tambahan.
 
 #### Reflection Publisher-2
+1. In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?
+> Menurut saya, kita harus memisahkan service dan repository dari model agar lebih mudah mengatur business logicnya karena keperluan/task masing-masing dari mereka berbeda (sekaligus mengimplementasikan SRP). Pemisahan ini akan membuat kode kita lebiih terstruktur, maintainable, scalable, dan testable.
+2. What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model?
+> Kalau cuma pakai model, bakal membuat kodenya sangat kompleks karena tiap model harus meliputi sangat banyak task/responsible (business logic dan data access operationnya) jadi akan sulit di maintain ataupun extend kodenya, atau yang biasa disebut bloated.
+3. Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.
+> Sudah, saya sudah mengeksplorasi lebih lanjut terkait Postman. Yang saya pahami sejauh ini, Postman bisa membantu kita dalam hit endpoint dan bisa tahu responsenya apa. Fitur yang saya sukai dari postman itu kita bisa mengubah format responsenya sesuka kita jadi lebih mudah ketika ingin melihat format tertentu. Lalu kita bisa set environment juga untuk bisa berkolaborasi dengan orang lain dalam hal api.
 
 #### Reflection Publisher-3
