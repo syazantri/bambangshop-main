@@ -93,3 +93,9 @@ This is the place for you to write reflections:
 > Sudah, saya sudah mengeksplorasi lebih lanjut terkait Postman. Yang saya pahami sejauh ini, Postman bisa membantu kita dalam hit endpoint dan bisa tahu responsenya apa. Fitur yang saya sukai dari postman itu kita bisa mengubah format responsenya sesuka kita jadi lebih mudah ketika ingin melihat format tertentu. Lalu kita bisa set environment juga untuk bisa berkolaborasi dengan orang lain dalam hal api.
 
 #### Reflection Publisher-3
+1. Observer Pattern has two variations: Push model (publisher pushes data to subscribers) and Pull model (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use?
+> Di sini kita pakai push model, bisa terlihat di notify function itu publishernya iterasi ke seluruh list of subscribers yang didapat dari SubscriberRepository secara aktif memanggil method update. 
+2. What are the advantages and disadvantages of using the other variation of Observer Pattern for this tutorial case? (example: if you answer Q1 with Push, then imagine if we used Pull)
+> Mengimplementasikan Pull variation of Observer Pattern dapat menguntungkan dalam mengatasi overhead karena subscribernya cuma bakal request update ketika dibutuhkan. Tapi jadinya tiidak real-time pengiriman notificationnya, yang merupakan kekurangan dari Pull variation ini.
+3. Explain what will happen to the program if we decide to not use multi-threading in the notification process.
+> Kalau ga pakai multi-threading, program bakal sangat tidak efisien karena pengiriman notifikasi harus menunggu yang lain selesai dulu. Delay ini nanti bakal pengaruh ke performancenya
